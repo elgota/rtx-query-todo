@@ -7,7 +7,7 @@ import {
     useAddTodoMutation,
 } from "../api/apiSlice"
 
-/* import { FontAwesomeIcon } from "@fortawesome/fontawesome-svg-core" */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash, faUpload } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
@@ -27,7 +27,7 @@ const TodoList = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        const id = 
         addTodo({ userId: 1, title: newTodo, completed: false })
         setNewTodo("")
     }
@@ -44,7 +44,7 @@ const TodoList = () => {
                     placeholder="Enter new todo"
                 />
                 <button className="submit">
-                    {/* <FontAwesomeIcon icon={faUpload}/> */}Upload
+                    <FontAwesomeIcon icon={faUpload}/>
                 </button>
             </div>
         </form>
@@ -67,9 +67,9 @@ const TodoList = () => {
                         <label htmlFor={todo.id}>{todo.title}</label>
 
                     </div>
-                    <button className="" onClick={() => deleteTodo({ id: todo.id })}>
-                        deleteTodo
-                        {/* <FontAwesomeIcon icon={faTrash} /> */}
+                    <button className="trash" onClick={() => deleteTodo({ id: todo.id })}>
+                        
+                        <FontAwesomeIcon icon={faTrash} />
                     </button>
                 </article>
             )
